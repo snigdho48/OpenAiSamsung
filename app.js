@@ -11,7 +11,7 @@ const apiKey =
   "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";
 const openai = new OpenAI({ organization: organization, apiKey: apiKey });
 const app = express();
-const PORT = process.env.PORT || 5600;
+const PORT = process.env.PORT || 5500;
 
 app.use(helmet());
 app.use(compression());
