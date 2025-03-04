@@ -8,10 +8,10 @@ import ip from "ip";
 
 const organization = "org-zQhEh3BKSWDo2UWzhBQuyI1V";
 const apiKey =
-  "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";
+  "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";
 const openai = new OpenAI({ organization: organization, apiKey: apiKey });
 const app = express();
-const PORT = process.env.PORT || 5500;
+const PORT = process.env.PORT || 5600;
 
 app.use(helmet());
 app.use(compression());
