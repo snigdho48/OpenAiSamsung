@@ -2,17 +2,24 @@ import express from "express";
 import bodyParser from "body-parser";
 import OpenAI from "openai";
 import cors from "cors";
+import compression from "compression";
+import helmet from "helmet";
 import ip from "ip";
 
 const organization = "org-zQhEh3BKSWDo2UWzhBQuyI1V";
-const apiKey = "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";
+const apiKey =
+  "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";
 const openai = new OpenAI({ organization: organization, apiKey: apiKey });
 const app = express();
 const PORT = process.env.PORT || 5500;
 
+app.use(helmet());
+app.use(compression());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
+
+// Additional optimizations can be applied here
 
 app.post("/receive_message", async (req, res) => {
   try {
@@ -23,10 +30,10 @@ app.post("/receive_message", async (req, res) => {
           role: "system",
           content:
             userInput +
-            "summarise this in same language with 5 bullet points within six words per point",
+            " summarise this in same language with 5 bullet points within 8 words per point.it has to be complete and meaningful.",
         },
       ],
-      model: "gpt-3.5-turbo",
+      model: "gpt-3.5-turbo-1106",
     });
 
     res.json({
