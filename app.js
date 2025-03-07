@@ -30,7 +30,7 @@ app.post("/receive_message", async (req, res) => {
           role: "system",
           content:
             userInput +
-            " summarise this in English language with 5 bullet points within 8 words per point.it has to be complete and meaningful.",
+            " summarise this in the same language as given with 5 bullet points within 8 words per point.it has to be complete and meaningful.",
         },
       ],
       model: "gpt-3.5-turbo-1106",
