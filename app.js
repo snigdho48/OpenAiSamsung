@@ -8,7 +8,7 @@ import ip from "ip";
 
 const organization = "org-zQhEh3BKSWDo2UWzhBQuyI1V";
 const apiKey =
-  "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";
+  "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";
 const openai = new OpenAI({ organization: organization, apiKey: apiKey });
 const app = express();
 const PORT = process.env.PORT || 5500;
